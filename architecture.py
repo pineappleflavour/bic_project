@@ -137,3 +137,6 @@ def run():
   architecture()
 
 run()
+
+#References:
+# Code structure idea: https://github.com/pineappleflavour/Inventory-management-system/tree/main
