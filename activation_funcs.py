@@ -23,6 +23,7 @@ def tanh(x):
   return forward_tanh, backward_tanh
 
 def relu(x):
+    #*REF: https://youtu.be/6MmGNZsA5nI?si=vpH9ZsZAXru4qfNc
     #forward path
     forward_relu = np.maximum(0, x)
 
