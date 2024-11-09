@@ -2,15 +2,11 @@ import numpy as np
 import pandas as pd
 import os
 
-def preprocessing():
+def preprocessing(data):
   
   ''' def preprocessing collects the data, selects the X and the y, converts them to np.arrays,
   for us to collect the shape of the input and output layer.
   '''
-
-  #get the path of the data, and parse
-  path = os.getcwd()
-  data = pd.read_csv(path + 'concrete_data.csv')
 
   #select the X and y
   y = data.iloc[:, -1]
