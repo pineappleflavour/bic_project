@@ -3,21 +3,27 @@ import pandas as pd
 import random
 import seaborn as sns #to visualize the loss
 import matplotlib.pyplot as plt
-from ucimlrepo import fetch_ucirepo
+# from ucimlrepo import fetch_ucirepo
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
 np.random.seed(17)
 
-from ucimlrepo import fetch_ucirepo
+# Collect the data from the user
+link = 'concrete_data.csv'
+
+data = pd.read_csv(link)
+target = 'concrete_compressive_strength'
+
+# from ucimlrepo import fetch_ucirepo
 #* REF: https://pypi.org/project/ucimlrepo/
 
 # Fetch the dataset
-concrete_compressive_strength = fetch_ucirepo(id=165)
-X = concrete_compressive_strength.data.features
-y = concrete_compressive_strength.data.targets
-data = concrete_compressive_strength.data
+# concrete_compressive_strength = fetch_ucirepo(id=165)
+# X = concrete_compressive_strength.data.features
+# y = concrete_compressive_strength.data.targets
+# data = concrete_compressive_strength.data
 
 ## --- PREPROCESSING ---
 
@@ -30,11 +36,11 @@ def preprocessing(data, target):
   and returns X_train, X_test, y_train, y_test'''
 
   # select the X and the y
-  # X = data.drop(target, axis=1)
-  # y = data[target]
+  X = data.drop(target, axis=1)
+  y = data[target]
 
-  X = concrete_compressive_strength.data.features
-  y = concrete_compressive_strength.data.targets
+#   X = concrete_compressive_strength.data.features
+#   y = concrete_compressive_strength.data.targets
 
   # train, test, split the data
   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 17)
