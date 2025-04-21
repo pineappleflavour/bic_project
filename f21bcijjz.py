@@ -422,7 +422,7 @@ def run():
   print(f'Training loss: {train_loss}')
   print(f'Test loss: {test_loss}')
 
-  return y_train_pred, y_test_pred, best_position, best_fitness, train_loss, test_loss,ann
+  return y_train_pred, y_test_pred, best_position, best_fitness, train_loss, test_loss, ann, X_train, X_test, y_train, y_test
 
 
 # Run the code
